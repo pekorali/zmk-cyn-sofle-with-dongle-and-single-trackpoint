@@ -1,0 +1,56 @@
+manifest:
+  remotes:
+    #- name: zmkfirmware
+    #  url-base: https://github.com/zmkfirmware
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
+    #- name: kumbung01
+    #  url-base: https://github.com/kumbung01
+    - name: pekorali
+      url-base: https://github.com/pekorali
+    - name: badjeff
+      url-base: https://github.com/badjeff
+    - name: nrfconnect
+      url-base: https://github.com/nrfconnect
+  projects:
+    - name: zmk
+      remote: petejohanson
+      #revision: v0.3
+      revision: core/main-work-queue
+      import: app/west.yml
+    - name: zmk-feature-split-esb
+      remote: pekorali
+      #revision: stable
+      #remote: badjeff
+      revision: main
+    - name: sdk-nrf
+      remote: badjeff
+      revision: v3.1-branch+zmk-fixes
+      path: nrf
+    - name: nrfxlib
+      remote: nrfconnect
+      revision: v3.1-branch
+      repo-path: sdk-nrfxlib
+      path: nrfxlib
+    - name: kb_zmk_ps2_mouse_trackpoint_driver
+      remote: pekorali
+      revision: main
+    #- name: zmk-behivior-custom-caps-word
+    #  remote: kumbung01
+    #  revision: main
+  self:
+    path: config
+
+
+
+
+
+
+
+
+
+
+
+
+
+
