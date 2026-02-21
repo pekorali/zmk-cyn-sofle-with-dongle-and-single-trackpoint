@@ -109,7 +109,7 @@
     compatible = "nordic,nrf-uarte";
     /* current-speed = <14400>; - most usable*/
 	/* current-speed = <19200>; */
-	current-speed = <9600>;
+	current-speed = <19200>;
     pinctrl-0 = <&uart0_ps2_default>;
     pinctrl-1 = <&uart0_ps2_off>;
     pinctrl-names = "default", "sleep";
@@ -140,10 +140,11 @@
     mouse_ps2: mouse_ps2 {
         compatible = "zmk,input-mouse-ps2";
         status = "okay";
+		disable-clicking;
         ps2-device = <&uart_ps2>;
 		/* Reset pin on Pro Micro Pinout D4 pin (P0.22) - required for reliable init */
         /* rst-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>; */
-        sampling-rate = <80>; /* Default 80. Use 60, 80 or 100Hz(200Hz can be unstable). The frequency at which the mouse samples and sends data (in Hz). */
+        sampling-rate = <100>; /* Default 80. Use 60, 80 or 100Hz(200Hz can be unstable). The frequency at which the mouse samples and sends data (in Hz). */
         tp-sensitivity = <90>; /* Default 128 How sensitive the TP is. Higher value = faster mouse movenet. Use range from 1 to 255.  */
         tp-neg-inertia = <6>; /* Default 6. Makes the TP feel more responsive and "overshoot" less. Makes cursor stop more quickly when releasing pressure. */
         tp-val6-upper-speed = <90>; /* Default 97. The maximum mouse movement speed the TP will accelarate to. */
