@@ -138,6 +138,8 @@
         compatible = "zmk,input-mouse-ps2";
         status = "okay";
         ps2-device = <&uart_ps2>;
+		/* Reset pin on Pro Micro Pinout D4 pin - required for reliable init */
+        rst-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
         sampling-rate = <100>; /* Default 80. Use 60, 80 or 100Hz(200Hz can be unstable). The frequency at which the mouse samples and sends data (in Hz). */
         tp-sensitivity = <90>; /* Default 128 How sensitive the TP is. Higher value = faster mouse movenet. Use range from 1 to 255.  */
         tp-neg-inertia = <6>; /* Default 6. Makes the TP feel more responsive and "overshoot" less. Makes cursor stop more quickly when releasing pressure. */
